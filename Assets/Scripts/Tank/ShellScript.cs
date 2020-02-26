@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shell : MonoBehaviour
+public class ShellScript : MonoBehaviour
 {
     public float m_MaxLifeTime = 2f;
     public float m_MaxDamage = 34f;
