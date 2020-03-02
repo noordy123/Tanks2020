@@ -36,7 +36,7 @@ public class EnemyTankShooting : MonoBehaviour
             if(m_ShootTimer <= 0)
             {
                 m_ShootTimer = m_ShootDelay;
-                
+                Fire();
             }
         }
     }

@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public Text m_MessageText;
     public Text m_TimerText;
 
+    public Image gameOverImage;
+    public Image winImage;
+
     private float m_gameTime = 0;
     public float GameTime { get { return m_gameTime; } }
 
@@ -36,7 +39,7 @@ public class GameManager : MonoBehaviour
         }
 
         m_TimerText.gameObject.SetActive(false);
-        m_MessageText.text = "Get Ready...";
+        m_MessageText.text = "good luck bro ;)";
     }
 
     private void Update()
@@ -74,9 +77,19 @@ public class GameManager : MonoBehaviour
                     isGameOver = true;
                 }
 
-                if(isGameOver == true)
+                if (isGameOver == true)
                 {
                     m_GameState = GameState.GameOver;
+                    m_TimerText.gameObject.SetActive(false);
+
+                    if(IsPlayerDead() == true)
+                    {
+                        gameOverImage.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        winImage.gameObject.SetActive(true);
+                    }
                 }
                 break;
 
@@ -85,6 +98,11 @@ public class GameManager : MonoBehaviour
                 {
                     m_gameTime = 0;
                     m_GameState = GameState.Playing;
+
+                    gameOverImage.gameObject.SetActive(false);
+                    winImage.gameObject.SetActive(false);
+
+                    m_TimerText.gameObject.SetActive(true);
 
                     for (int i = 0; i < m_Tanks.Length; i++)
                     {
@@ -106,7 +124,7 @@ public class GameManager : MonoBehaviour
 
         for(int i = 0; i < m_Tanks.Length; i++)
         {
-            if(m_Tanks[i].activeSelf == false)
+            if(m_Tanks[i].activeSelf == true)
             {
                 numTanksLeft++;
             }

@@ -8,6 +8,8 @@ public class HueShifter : MonoBehaviour
     public float Speed = 2;
     public Material shift;
     public Text warning;
+    
+    public Outline[] textOutline;
 
     // Start is called before the first frame update
     void Start()
@@ -19,5 +21,10 @@ public class HueShifter : MonoBehaviour
     {
         shift.SetColor("_Color", HSBColor.ToColor(new HSBColor(Mathf.PingPong(Time.time * Speed, 1), 1, 1)));
         warning.color = shift.color;
+
+        for (int j = 0; j < textOutline.Length; j++)
+        {
+            textOutline[j].effectColor = shift.color;
+        }
     }
 }
