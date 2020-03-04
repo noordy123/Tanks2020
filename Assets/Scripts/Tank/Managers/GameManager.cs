@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] m_Tanks;
 
+    public HighScores m_HighScores;
+
     public Text m_MessageText;
     public Text m_TimerText;
 
@@ -89,6 +91,10 @@ public class GameManager : MonoBehaviour
                     else
                     {
                         winImage.gameObject.SetActive(true);
+
+                        // save the score
+                        m_HighScores.AddScore(Mathf.RoundToInt(m_gameTime));
+                        m_HighScores.SaveScoresToFile();
                     }
                 }
                 break;
@@ -98,6 +104,7 @@ public class GameManager : MonoBehaviour
                 {
                     m_gameTime = 0;
                     m_GameState = GameState.Playing;
+                    m_Tanks[0].transform.position = new Vector3(0,0);
 
                     gameOverImage.gameObject.SetActive(false);
                     winImage.gameObject.SetActive(false);
