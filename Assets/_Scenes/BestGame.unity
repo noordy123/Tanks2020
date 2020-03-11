@@ -1988,7 +1988,7 @@ GameObject:
   m_Component:
   - component: {fileID: 656249594}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Pointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2589,7 +2589,7 @@ Transform:
   m_Children:
   - {fileID: 1179193354}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 40, y: 60, z: 0}
 --- !u!114 &854167372
 MonoBehaviour:
@@ -2605,6 +2605,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DampTime: 0.2
   m_target: {fileID: 0}
+--- !u!1 &861947579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 861947580}
+  m_Layer: 0
+  m_Name: Distance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &861947580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861947579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1718954554}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &865763516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 7f7b62ebe29e22048b2f9f9badea3316,
@@ -3049,7 +3080,7 @@ Transform:
   - {fileID: 1093267609}
   - {fileID: 412604035}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1173848063
 GameObject:
@@ -5209,11 +5240,11 @@ RectTransform:
   m_GameObject: {fileID: 1718954553}
   m_LocalRotation: {x: 0.36330786, y: 0.55057013, z: -0.15983652, w: 0.7343925}
   m_LocalPosition: {x: 0, y: 0, z: 5.2}
-  m_LocalScale: {x: 0.010000003, y: 0.01, z: 0.010000009}
+  m_LocalScale: {x: 0.0100000035, y: 0.01, z: 0.010000013}
   m_Children:
   - {fileID: 1630412545}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 861947580}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 134.79599, y: -100.61301, z: -166.433}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6642,7 +6673,7 @@ MonoBehaviour:
   m_TimerText: {fileID: 1485899307}
   gameOverImage: {fileID: 1944981205}
   winImage: {fileID: 716499387}
-  distanceUI: {fileID: 1718954554}
+  distanceUI: {fileID: 861947580}
 --- !u!4 &2125999796
 Transform:
   m_ObjectHideFlags: 0
@@ -6655,7 +6686,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2125999797
 MonoBehaviour:
