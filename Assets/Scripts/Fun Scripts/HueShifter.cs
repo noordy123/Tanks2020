@@ -22,9 +22,16 @@ public class HueShifter : MonoBehaviour
     {
         shift.SetColor("_Color", HSBColor.ToColor(new HSBColor(Mathf.PingPong(Time.time * Speed, 1), 1, 1)));
 
-        for(int i = 0; i < warning.Length; i++)
-        warning[i].color = shift.color;
+        for (int i = 0; i < warning.Length; i++)
+        {
+            warning[i].color = shift.color;
+        }
 
+
+    }
+
+    private void FixedUpdate()
+    {
         for (int j = 0; j < textOutline.Length; j++)
         {
             textOutline[j].effectColor = shift.color;

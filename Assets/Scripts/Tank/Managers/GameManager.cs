@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] m_Tanks;
+    public static GameObject[] m_Tanks;
 
     public HighScores m_HighScores;
 
@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     public Image gameOverImage;
     public Image winImage;
+
+    public Transform distanceUI;
 
     private float m_gameTime = 0;
     public float GameTime { get { return m_gameTime; } }
@@ -41,11 +43,13 @@ public class GameManager : MonoBehaviour
         }
 
         m_TimerText.gameObject.SetActive(false);
-        m_MessageText.text = "good luck bro ;)";
+        m_MessageText.text = "Press Enter to Begin";
     }
 
     private void Update()
     {
+        distanceUI = m_Tanks[0].transform;
+
         switch (m_GameState)
         {
             case GameState.Start:
